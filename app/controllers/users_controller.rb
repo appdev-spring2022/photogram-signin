@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       if user.authenticate(pw)
         session.store(:user_id, user.id)
 
-        redirect_to("/", {:notice => "Welcome back," + user.username + "!"})
+        redirect_to("/", {:notice => "Welcome back, " + user.username + "!"})
       else
         redirect_to("/user_sign_in", {:notice => "Nice try, sucker!"})
       end
